@@ -11,6 +11,12 @@ public class CameraController : MonoBehaviour
     public float bottomLimit;
     public float topLimit;
 
+    [Header("カメラのスクロール設定")]
+    public bool isScrollX; //横方向に強制スクロールするかのフラグ
+    public float scrollSpeedX = 0.5f;
+    public bool isScrollY; //縦方向に強制スクロールするかのフラグ
+    public float scrollSpeedY = 0.5f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +33,14 @@ public class CameraController : MonoBehaviour
         x = player.transform.position.x;
         y = player.transform.position.y;
 
+        //もしも横の強制スクロールフラグが立っていたら
+        if (isScrollX)
+        {
+            //前の座標に変数分だけ加算した座標
+            x = transform.position.x + (scrollSpeedX * Time.deltaTime);
+        }
+
+        //もしも左右の限界までプレイヤーが移動したら
         if (x < leftLimit)
         {
             x = leftLimit;
@@ -36,6 +50,14 @@ public class CameraController : MonoBehaviour
             x = rightLimit;
         }
 
+        //もしも縦の強制スクロールフラグが立っていたら
+        if (isScrollY)
+        {
+            //前の座標に変数分だけ加算した座標
+            y = transform.position.y + (scrollSpeedY * Time.deltaTime);
+        }
+
+        //もしも上下の限界までプレイヤーが移動したら
         if (y < bottomLimit)
         {
             y = bottomLimit;

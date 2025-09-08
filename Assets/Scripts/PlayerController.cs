@@ -145,6 +145,9 @@ public class PlayerController : MonoBehaviour
 
         //少し上に飛び跳ねさせる
         rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+
+        //プレイヤーを3秒後に抹消
+        Destroy(gameObject,3.0f);
     }
 
     void GameStop()

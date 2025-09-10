@@ -125,6 +125,13 @@ public class PlayerController : MonoBehaviour
             Debug.Log("ゲームオーバー！");
             GameOver();
         }
+
+        //アイテムに触れたらステージスコアに加算
+        if (collision.gameObject.CompareTag("ItemScore"))
+        {
+            GameManager.stageScore += collision.gameObject.GetComponent<ItemData>().value;
+            Destroy(collision.gameObject);
+        }
     }
 
     //ゴールした時のメソッド

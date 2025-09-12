@@ -740,8 +740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae12077aa87d214598c77c6ba7792cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCountDown: 0
-  gameTime: 60
+  isCountDown: 1
+  gameTime: 10
   isTimeOver: 0
   displayTime: 0
 --- !u!1 &383754230
@@ -2967,7 +2967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e9900dd08b23249879c2de6c31401a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Stage1
+  sceneName: Result
 --- !u!1001 &653939238
 PrefabInstance:
   m_ObjectHideFlags: 0
